@@ -1,10 +1,20 @@
 schema = 1
 default_branch = "main"
-setup = []
-test_globs = []
+setup = ["pnpm install --frozen-lockfile --offline"]
+test_globs = ["tests/**/*.test.ts"]
 allowed_ignored = []
+skip_until_exists = ["package.json"]
 
 [verify]
+format = "pnpm exec prettier --check ."
+lint = "pnpm exec eslint ."
+html = "pnpm exec html-validate index.html"
+typecheck = "pnpm exec tsc --noEmit"
+test = "pnpm exec vitest run"
+build = "pnpm exec vite build"
+
+[deps]
+agents_add = true
 
 [cache]
 cargo_target = "per-slot"
