@@ -1,0 +1,10 @@
+schema = 1
+default_branch = "main"
+setup = []
+test_globs = []
+allowed_ignored = []
+
+[verify]
+
+[cache]
+cargo_target = "per-slot"
