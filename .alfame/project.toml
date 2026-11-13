@@ -1,0 +1,67 @@
+schema = 1
+name = "Aritest-toberemoved4"
+key = "AT4"
+require_claude_org = false
+
+[board]
+forge = "github"
+host = "github.com"
+owner = "alfameCom"
+project = "17"
+
+[board.status]
+backlog = "Backlog"
+ready = "Ready"
+in_progress = "In Progress"
+in_review = "In Review"
+needs_human = "Needs Human"
+done = "Done"
+
+[board.fields]
+priority = "Priority"
+size = "Size"
+lane = "Lane"
+milestone = "Release"
+
+[people]
+po = ["AriAlfame"]
+trusted = ["AriAlfame"]
+
+[[repos]]
+name = "alfameCom/Aritest-toberemoved4"
+hub = true
+owns = ["**"]
+
+[policy]
+autonomy = "supervised"
+max_fix_rounds = 2
+max_attempts = 2
+max_changed_lines = 1000
+human_review_wip = 8
+max_unreviewed_merges = 6
+protected_paths = [".claude/**", ".codex/**", ".agents/**", ".opencode/**", "opencode.json*", ".mcp.json", "**/AGENTS.md", "**/AGENTS.override.md", "**/CLAUDE.md", "**/CLAUDE.local.md", ".alfame/**", ".cargo/**", "rust-toolchain", "rust-toolchain.toml", ".npmrc", "pnpm-workspace.yaml", "uv.toml", "**/NuGet.config", "**/global.json", "**/Directory.Build.*", "gradle.properties", "gradle/wrapper/**", "go.work"]
+
+[policy.budget]
+
+[roles.implementer]
+harness = "claude"
+model = "opus"
+effort = "high"
+
+[roles.reviewer]
+harness = "claude"
+model = "opus"
+effort = "high"
+
+[roles.fixer]
+inherit = "implementer"
+
+[roles.lead]
+harness = "claude"
+model = "opus"
+effort = "high"
+
+[roles.refiner]
+harness = "claude"
+model = "opus"
+effort = "high"
